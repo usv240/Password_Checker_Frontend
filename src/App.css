@@ -1,43 +1,81 @@
+/* Global styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  padding: 50px;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #f4f4f4;
   height: 100vh;
-  margin: 0;
 }
 
-.container {
-  background-color: #333;
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-gap: 20px;
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Left and right panels */
+.left-panel, .right-panel {
+  background-color: #e9ecef;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.left-panel h2, .right-panel h3 {
+  color: #333;
+}
+
+.article-list {
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.article-list li {
   padding: 30px;
+  margin-bottom: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.article-list li:hover {
+  background-color: #dee2e6;
+}
+
+/* Center panel */
+.center-panel {
+  padding: 30px;
+  background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 400px;
 }
 
 h2 {
-  color: white;
-  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.8em;
 }
 
 .inputArea {
-  position: relative;
-  width: 100%;
   margin-bottom: 20px;
 }
 
 input {
   font-size: 16px;
-  padding: 12px;
+  padding: 15px;
   width: 100%;
   border: 1px solid #ccc;
   border-radius: 8px;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 10px;
-  background: #f4f4f4;
 }
 
 input:focus {
@@ -46,146 +84,131 @@ input:focus {
 }
 
 .show {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 10px;
   cursor: pointer;
   background-color: #444;
   color: white;
   font-size: 0.8em;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.show:hover {
-  background-color: #555;
 }
 
 button {
-  padding: 10px 20px;
+  padding: 15px 30px;
   background-color: #28a745;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 16px;
-}
-
-button:hover {
-  background-color: #218838;
-}
-
-.strengthMeter {
-  width: 100%;
-  height: 10px;
-  border-radius: 5px;
-  background-color: #e0e0e0;
-  margin-bottom: 20px;
-}
-
-.container.weak .strengthMeter {
-  background-color: #f00;
-}
-
-.container.moderate .strengthMeter {
-  background-color: #eedc3d;
-}
-
-.container.strong .strengthMeter {
-  background-color: #18e605;
-}
-
-/* Style for displaying the result below the button */
-.result {
-  margin-top: 20px;
   font-size: 18px;
-  color: #fff;
-}
-
-/* Responsive Design for smaller screens */
-@media (max-width: 600px) {
-  .container {
-    width: 90%;
-  }
-  h2 {
-    font-size: 1.5em;
-  }
-  button {
-    font-size: 14px;
-    padding: 10px;
-  }
-}
-
-/* Default container styling */
-.container {
-  padding: 20px;
-  border-radius: 5px;
-  text-align: center;
-  width: 300px;
-  margin: auto;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
 }
 
-/* Weak password color */
-.container.weak {
-  background-color: #bf0808;  /* Light red */
-}
-
-/* Moderate password color */
-.container.moderate {
-  background-color: #fcc601;  /* Light yellow */
-}
-
-/* Strong password color */
-.container.strong {
-  background-color: #03ca03;  /* Light green */
-}
-
-/* Other styles */
-input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
 button:hover {
   background-color: #218838;
 }
 
-
-.container.weak {
-  background-color: #fdd;
+/* Password strength labels */
+.password-strength-label {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: center;
 }
 
-.container.moderate {
-  background-color: #ffecb3;
+.password-strength-label.weak {
+  color: #ff3333;
 }
 
-.container.strong {
-  background-color: #d4f8e3;
+.password-strength-label.moderate {
+  color: #ffa500;
 }
 
-.strengthMeter.weak {
-  background-color: #f00;
+.password-strength-label.strong {
+  color: #28a745;
 }
 
-.strengthMeter.moderate {
-  background-color: #eedc3d;
+/* Warnings */
+.mutationWarning {
+  color: #ff3333;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
-.strengthMeter.strong {
-  background-color: #18e605;
+.predictionWarning {
+  color: #ffa500;
+  font-weight: bold;
+  margin-top: 10px;
 }
+
+/* Suggestions box */
+.suggestions {
+  margin-top: 20px;
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.suggestions ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.suggestions ul li {
+  margin-bottom: 10px;
+}
+
+/* Info boxes on the right panel */
+.info-box {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.info-box h3 {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #007bff;
+}
+
+.info-box p, .info-box ul {
+  font-size: 1.1em;
+}
+
+.entropy-info, .score-info {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Collapsible section styling */
+h3:hover, h4:hover {
+  color: #0056b3;
+}
+
+h4 {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #007bff;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul li {
+  padding: 5px;
+  background-color: #f8f9fa;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+ul li:hover {
+  background-color: #dee2e6;
+}
+
