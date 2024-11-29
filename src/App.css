@@ -13,6 +13,8 @@ body {
   font-family: 'Poppins', sans-serif;
   display: flex;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 /* Main Container */
@@ -27,99 +29,79 @@ body {
 /* Header */
 .header {
   text-align: center;
-  padding: 10px 0;
+  padding: 3px 0; /* Reduce padding */
   background: #222;
   color: #ff8a00;
-  font-size: 2rem;
+  font-size: 1.8rem; /* Adjust font size */
   font-weight: bold;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.4);
+  margin-top: -15px; /* Reduce top margin */
 }
 
 /* Navbar */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: 20px;
   background: #222;
   color: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  padding: 5px 0; /* Compact padding */
+  margin-top: -10px; /* Reduce top margin */
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.4);
 }
 
 .navbar-item {
-  flex: 1;
-}
-
-.navbar-item:first-child {
-  text-align: left;
-}
-
-.navbar-item:last-child {
-  text-align: right;
-}
-
-.navbar-item h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
   cursor: pointer;
+  font-size: 1rem; /* Adjust font size */
   transition: color 0.3s;
 }
 
-.navbar-item h3:hover {
+.navbar-item:hover {
   color: #ff8a00;
 }
 
-.navbar-item ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.navbar-item li {
-  margin: 5px 0;
-}
-
-.navbar-item a {
-  text-decoration: none;
+.navbar-item.active {
   color: #ff8a00;
-}
-
-.navbar-item a:hover {
-  color: #e52e71;
+  text-decoration: underline;
 }
 
 /* Center Panel */
 .center-panel {
   flex: 1;
-  padding: 20px;
+  padding: 5px; /* Compact padding */
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 5px 0; /* Reduce vertical margins */
 }
 
+/* Card */
 .card {
   width: 100%;
-  max-width: 800px;
+  max-width: 700px; /* Adjust width */
   background: #1b1b1b;
-  border-radius: 15px;
-  padding: 30px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 10px; /* Adjust border radius */
+  padding: 15px; /* Compact padding */
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.4);
+  margin: 5px auto; /* Reduce overall margin */
 }
 
 .card h2 {
-  font-size: 1.8rem;
+  font-size: 1.4rem; /* Adjust font size */
   color: #ff8a00;
-  margin-bottom: 20px;
+  margin-bottom: 8px; /* Compact gap */
 }
 
+/* Input Fields */
 .input-field {
   width: 100%;
-  padding: 12px;
-  margin-top: 15px;
+  padding: 8px; /* Compact height */
+  margin-top: 8px; /* Compact margin */
   border: none;
-  border-radius: 10px;
+  border-radius: 6px;
   background: #333;
   color: #fff;
+  font-size: 0.9rem;
 }
 
 .input-field:focus {
@@ -127,14 +109,17 @@ body {
   background: #444;
 }
 
+/* Toggle Password Button */
 .toggle-password-btn {
-  padding: 10px;
+  padding: 6px 12px; /* Smaller button size */
+  font-size: 0.85rem; /* Adjust font size */
   border: none;
-  border-radius: 10px;
+  border-radius: 6px;
   background: #ff8a00;
   color: #fff;
   cursor: pointer;
-  margin-top: 10px;
+  margin: 10px auto; /* Adjust spacing */
+  display: block;
 }
 
 .toggle-password-btn:hover {
@@ -143,97 +128,97 @@ body {
 
 /* Password Strength Meter */
 .password-strength-meter {
-  height: 8px;
+  height: 5px; /* Compact bar height */
   width: 100%;
   background-color: #e0e0e0;
-  border-radius: 4px;
-  margin: 10px 0;
-  overflow: hidden;
+  border-radius: 3px; /* Compact border radius */
+  margin: 5px 0; /* Reduce spacing */
 }
 
 .strength-bar {
-  height: 100%;
-  border-radius: 4px;
+  height: 5px; /* Match bar height */
+  border-radius: 3px;
   transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-/* Tooltip */
-.tooltip {
-  position: relative;
-  display: inline-block;
-}
-
-.tooltip .tooltip-text {
-  visibility: hidden;
-  width: 250px;
-  background-color: #333;
-  color: #fff;
+/* Results Section */
+.result-box {
+  display: block;
+  width: 100%;
   text-align: center;
-  padding: 5px;
-  border-radius: 5px;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -125px;
-  opacity: 0;
-  transition: opacity 0.3s;
+  margin-bottom: 5px; /* Compact spacing */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-.tooltip:hover .tooltip-text {
-  visibility: visible;
-  opacity: 1;
+.results-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px; /* Compact spacing between results */
+  margin-bottom: 5px; /* Compact spacing below */
+  flex-wrap: wrap;
 }
 
-/* Copy Password Button */
-.copy-password-btn {
-  margin-top: 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.copy-password-btn:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-/* Result Card */
-.result-card {
+.results-container .result-box {
+  flex: 1;
+  text-align: center;
+  padding: 6px; /* Compact padding */
   background: #1b1b1b;
-  padding: 20px;
-  border-radius: 10px;
-  margin-top: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 6px; /* Adjust border radius */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  font-size: 0.85rem; /* Compact font size */
+}
+
+.results-container .result-box h4 {
+  color: #ff8a00; /* Orange headings */
+  font-size: 0.85rem; /* Compact font size */
+  margin-bottom: 3px; /* Compact spacing */
+}
+
+.results-container .result-box p {
+  color: #fff; /* White for values */
+  font-size: 0.8rem; /* Compact font */
+  margin-top: 3px; /* Compact spacing */
+}
+
+/* Tips Section */
+.tips-container {
+  margin-top: 8px; /* Compact spacing above */
+  padding: 10px; /* Compact padding */
+  border-radius: 8px;
+  background: #1b1b1b;
+  text-align: center;
   color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.85rem; /* Compact font size */
 }
 
-.result-title.strong {
-  color: green;
+.tips-container h4 {
+  font-size: 1rem; /* Adjust font size */
+  margin-bottom: 4px; /* Adjust spacing */
+  color: #ff8a00; /* Orange heading */
 }
 
-.result-title.medium {
-  color: orange;
+.tips-list {
+  width: 100%; /* Full width */
+  text-align: left; /* Align text to left */
+  color: #ff8a00; /* Orange text */
+  font-size: 0.8rem; /* Compact font size */
+  line-height: 1.2; /* Adjust line height */
+  margin: 0; /* Remove extra margin */
 }
 
-.result-title.weak {
-  color: red;
+.tips-item {
+  margin-bottom: 0px; /* Compact spacing */
 }
 
-.result-details p {
-  margin: 5px 0;
-}
-
-.suggestions h4 {
-  margin-top: 10px;
-}
-
-.suggestions ul {
-  padding-left: 20px;
-  list-style: disc;
+.tips-item::before {
+  content: "✔"; /* Add checkmark */
+  margin-right: 5px; /* Compact spacing before checkmark */
+  color: green; /* Green checkmark */
+  font-weight: bold;
 }
 
 /* Footer */
@@ -241,35 +226,373 @@ body {
   background: #1b1b1b;
   color: #888;
   text-align: center;
-  padding: 10px 0;
+  padding: 5px 0; /* Compact padding */
   width: 100%;
   position: fixed;
   bottom: 0;
   left: 0;
 }
 
-/* Dark Mode */
-body.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0;
+/* General Reset */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: linear-gradient(135deg, #121212, #1e1e1e);
+  color: #f5f5f5;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main Container */
+.main-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 3px 0; /* Minimized padding */
+  background: #222;
+  color: #ff8a00;
+  font-size: 1.6rem; /* Reduced font size */
+  font-weight: bold;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.4);
+  margin-top: -15px; /* Pulled upward */
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #222;
+  color: #fff;
+  padding: 3px 0; /* Compact padding */
+  margin-top: -10px; /* Reduced margin */
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.navbar-item {
+  cursor: pointer;
+  font-size: 0.9rem; /* Reduced font size */
+  transition: color 0.3s;
+}
+
+.navbar-item:hover {
+  color: #ff8a00;
+}
+
+.navbar-item.active {
+  color: #ff8a00;
+  text-decoration: underline;
 }
 
 /* Center Panel */
 .center-panel {
   flex: 1;
-  padding: 40px; /* Increased padding for more spacing */
+  padding: 5px; /* Minimized padding */
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 3px 0; /* Reduced vertical margins */
 }
 
 /* Card */
 .card {
   width: 100%;
-  max-width: 1000px; /* Increased max-width */
-  min-height: 500px; /* Added minimum height for better scaling */
+  max-width: 680px; /* Adjusted width */
   background: #1b1b1b;
-  border-radius: 15px;
-  padding: 40px; /* Increased padding for content spacing */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 8px; /* Reduced border radius */
+  padding: 10px; /* Compact padding */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+  margin: 5px auto; /* Reduced overall margin */
+}
+
+.card h2 {
+  font-size: 1.4rem; /* Reduced font size */
+  color: #ff8a00;
+  margin-bottom: 5px; /* Reduced gap */
+}
+
+/* Input Fields */
+.input-field {
+  width: 100%;
+  padding: 6px; /* Minimized height */
+  margin-top: 6px; /* Compact spacing */
+  border: none;
+  border-radius: 6px;
+  background: #333;
+  color: #fff;
+  font-size: 0.85rem; /* Slightly smaller font */
+}
+
+.input-field:focus {
+  outline: none;
+  background: #444;
+}
+
+/* Toggle Password Button */
+.toggle-password-btn {
+  padding: 5px 10px; /* Smaller button size */
+  font-size: 0.85rem; /* Adjusted font size */
+  border: none;
+  border-radius: 6px;
+  background: #ff8a00;
+  color: #fff;
+  cursor: pointer;
+  margin: 10px auto; /* Compact spacing */
+  display: block;
+}
+
+.toggle-password-btn:hover {
+  background: #e52e71;
+}
+
+/* Password Strength Meter */
+.password-strength-meter {
+  height: 5px; /* Reduced bar height */
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 3px; /* Compact border radius */
+  margin: 5px 0; /* Reduced spacing */
+}
+
+.strength-bar {
+  height: 5px; /* Match bar height */
+  border-radius: 3px;
+  transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Results Section */
+.result-box {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 5px; /* Compact spacing */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.results-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px; /* Compact spacing between results */
+  margin-bottom: 5px; /* Reduced spacing */
+  flex-wrap: wrap;
+}
+
+.results-container .result-box {
+  flex: 1;
+  text-align: center;
+  padding: 5px; /* Compact padding */
+  background: #1b1b1b;
+  border-radius: 6px; /* Adjust border radius */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  font-size: 0.8rem; /* Reduced font size */
+}
+
+.results-container .result-box h4 {
+  color: #ff8a00; /* Orange headings */
+  font-size: 0.8rem; /* Compact font size */
+  margin-bottom: 3px; /* Compact spacing */
+}
+
+.results-container .result-box p {
+  color: #fff; /* White for values */
+  font-size: 0.75rem; /* Reduced font size */
+  margin-top: 3px; /* Compact spacing */
+}
+
+/* Tips Section */
+.tips-container {
+  margin-top: 5px; /* Compact spacing above */
+  padding: 8px; /* Compact padding */
+  border-radius: 6px;
+  background: #1b1b1b;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.8rem; /* Reduced font size */
+}
+
+.tips-container h4 {
+  font-size: 1rem; /* Reduced font size */
+  margin-bottom: 4px; /* Compact spacing */
+  color: #ff8a00; /* Orange heading */
+}
+
+.tips-list {
+  width: 100%; /* Full width */
+  text-align: left; /* Align text to left */
+  color: #ff8a00; /* Orange text */
+  font-size: 0.8rem; /* Compact font size */
+  line-height: 1.2; /* Reduced line height */
+  margin: 0; /* Remove extra margin */
+}
+
+.tips-item {
+  margin-bottom: 3px; /* Compact spacing */
+}
+
+.tips-item::before {
+  content: "✔"; /* Add checkmark */
+  margin-right: 5px; /* Compact spacing before checkmark */
+  color: green; /* Green checkmark */
+  font-weight: bold;
+}
+
+/* Footer */
+.footer {
+  background: #1b1b1b;
+  color: #888;
+  text-align: center;
+  padding: 3px 0; /* Compact padding */
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+/* Result Box */
+.result-box {
+  margin-bottom: 3px; /* Further reduce the space below result boxes */
+  padding: 6px; /* Compact padding inside boxes */
+}
+
+/* Results Container */
+.results-container {
+  margin-top: 5px; /* Reduce space above the results container */
+  margin-bottom: 5px; /* Compact space below the results container */
+  gap: 5px; /* Minimize spacing between the result boxes */
+}
+
+/* Result Texts */
+.results-container .result-box h4 {
+  margin-bottom: 3px; /* Reduce space below the headings */
+  font-size: 0.8rem; /* Adjust font size for headings */
+}
+
+.results-container .result-box p {
+  margin-top: 3px; /* Reduce gap between heading and content */
+  font-size: 0.75rem; /* Compact font size */
+}
+
+/* Tips Section */
+.tips-container {
+  margin-top: 5px; /* Compact space above tips section */
+  padding: 8px; /* Minimize padding inside */
+}
+
+.tips-container h4 {
+  margin-bottom: 4px; /* Reduce space below the "Tips" heading */
+  font-size: 1rem; /* Slightly smaller font size */
+}
+
+.tips-container p {
+  margin: 3px 0; /* Minimize space between individual tips */
+  font-size: 0.85rem; /* Adjust font size for tips */
+  line-height: 1.2; /* Reduce line height for tighter spacing */
+}
+
+/* Strength Bar */
+.strength-bar {
+  height: 5px; /* Compact bar height */
+  margin-bottom: 5px; /* Reduce spacing below the strength bar */
+}
+
+/* Overall Center Panel Adjustments */
+.center-panel {
+  padding: 5px; /* Reduce inner padding */
+  margin: 3px 0; /* Minimize overall vertical spacing */
+}
+
+/* Card Adjustments */
+.card {
+  padding: 10px; /* Compact padding inside the card */
+  margin: 5px auto; /* Further reduce space around the card */
+}
+.info-box {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  background: #1b1b1b;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.info-box h4 {
+  cursor: pointer;
+  color: #ff8a00;
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.info-box p {
+  color: #fff;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 5px 0 0 0;
+}
+
+/* Helpful Resources Card */
+.card {
+  background: #1b1b1b;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card h2 {
+  font-size: 1.6rem;
+  color: #ff8a00;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.resources-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.resources-list li {
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #333;
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out, background-color 0.3s;
+}
+
+.resources-list li:hover {
+  transform: translateY(-2px);
+  background: #444;
+}
+
+.resources-list a {
+  text-decoration: none;
+  color: #ff8a00;
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: block;
+  text-align: center;
+}
+
+.resources-list a:hover {
+  color: #e5e5e5;
+  text-decoration: underline;
 }
