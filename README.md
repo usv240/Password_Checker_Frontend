@@ -37,19 +37,19 @@ This repository contains the **frontend implementation** of the Password Strengt
    git clone https://github.com/usv240/Password_Checker_Frontend.git
    cd Password_Checker_Frontend
 
-2. Install dependencies:
+2. **Install dependencies**:
 
         npm install
 
-3. Ensure the backend server is running:
+3. **Ensure the backend server is running**:
 
     The backend server must be running at http://localhost:3002 (or update the API URL in the code if needed).
 
-4. Start the development server:
+4. **Start the development server**:
 
         npm start
 
-5. Access the application:
+5. **Access the application**:
         Open your browser and go to http://localhost:3000.
 
 How to Use
