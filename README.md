@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# Password Strength Checker - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the **frontend implementation** of the Password Strength Checker application. It provides an interactive user interface for analyzing password strength and displaying feedback based on entropy, mutations, and prediction patterns.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
+- Real-time password strength analysis.
+- Displays insights including:
+  - Entropy
+  - Mutation warnings
+  - Prediction warnings
+- Provides actionable tips to improve password strength.
+- Seamlessly integrates with the backend via API calls.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
+- React.js
+- React Router
+- Axios
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Installation Instructions
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
+- **Node.js** (v14+)
+- The backend server should be running ([Password Checker Backend Repository](https://github.com/usv240/Password_Checker_Backend)).
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Steps to Run the Frontend
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/usv240/Password_Checker_Frontend.git
+   cd Password_Checker_Frontend
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install dependencies:
 
-### `npm run eject`
+        npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Ensure the backend server is running:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    The backend server must be running at http://localhost:3002 (or update the API URL in the code if needed).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Start the development server:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+        npm start
 
-## Learn More
+5. Access the application:
+        Open your browser and go to http://localhost:3000.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+How to Use
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    Navigate to the Home page to register your details (name, email, birthdate, etc.).
+    Enter a password on the Password Checker page to analyze its strength.
+    Review the entropy, score, warnings, and tips provided to improve your password.
 
-### Code Splitting
+Screenshots
+Password Strength Checker Page
+https://drive.google.com/file/d/13rcea6CnAyGL6swSXwTSAArwTy1NrJIq/view?usp=sharing, 
+https://drive.google.com/file/d/1BjNrwFhpn4dZlepMj0qNgCPSBY6Oe74C/view?usp=sharing, 
+https://drive.google.com/file/d/1aukhhGAzkH_Gfgr8yRLja1wNH9kmMwY2/view?usp=sharing,
+https://drive.google.com/file/d/1kvu23ktG0P25EffBEh5V_CgtCZFmA1ai/view?usp=sharing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Insights and Recommendations
 
-### Analyzing the Bundle Size
+Related Repository
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The backend for this project can be found here:
 
-### Making a Progressive Web App
+    [Password Checker Backend](https://github.com/usv240/Password_Checker_Backend)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+For a combined backend and frontend implementation, visit the monorepo:
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    [Monorepo](https://github.com/usv240/password-strength-checker/tree/main)
